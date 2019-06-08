@@ -1,0 +1,17 @@
+.side-bar
+  .header
+    %p.header__name
+      ユーザー名
+    %ul.user-menu
+      %li.user-menu__edit-user
+        = link_to '#' do
+          %i.fa.fa-edit
+      %li.user-menu__new-group
+        = link_to '#' do
+          %i.fa.fa-cog
+  .groups
+    .group
+      .group__name
+        グループ名
+      .group__message
+        新着メッセージ
