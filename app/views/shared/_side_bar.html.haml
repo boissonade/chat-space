@@ -1,26 +1,15 @@
 .side-bar
   .header
-    %h3.header__name
+    %p.header__name
       ユーザー名
-    %ul.header__lists
-      %ul.user-menu
-        %li.user-menu__edit-user
-          %a{:href => "/groups/new"}
-            %i.fa.fa-edit
-        %li.user-menu__new-group
-          %a{:href => "/users/61/edit"}
-            %i.fa.fa-cog
+    %ul.user-menu
+      %li.user-menu__edit-user
+        = link_to '#' do
+          %i.fa.fa-edit
+      %li.user-menu__new-group
+        = link_to '#' do
+          %i.fa.fa-cog
   .groups
-    .group
-      .group__name
-        グループ名
-      .group__message
-        新着メッセージ
-    .group
-      .group__name
-        グループ名
-      .group__message
-        新着メッセージ
     .group
       .group__name
         グループ名
