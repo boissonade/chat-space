@@ -34,13 +34,16 @@
 }
     .group {
       box-sizing: border-box;
-      padding: 15px 0 40px;
+      padding: 20px 0 40px;
       &__name {
         font-size: $side_group_name;
       }
       &__message {
         font-size: $side_group_message;
-        margin-top: 11px;
+        margin-top: 5px;
         display: flex;
+      }
+      .a{
+        color: white;
       }
 }
