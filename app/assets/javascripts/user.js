@@ -1,7 +1,7 @@
 $(function() {
   $(document).on("click", ".user-search-add", function () {
-      var user_id = $(this).attr("data-user-id");
-      var user_name = $(this).attr("data-user-name");
+      var user_id = $(this).data('user-id');
+      var user_name = $(this).data('user-name');
       selectUserName(user_id, user_name);
       $(this).parent().remove();
     })
@@ -17,7 +17,6 @@ function appendUserName(user) {
                 <p class="chat-group-user__name">${ user.name }</p>
                 <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${ user.id }"  data-user-name="${ user.name }">追加</a>
               </div>`
-              console.log(user)
     search_list.append(html);
   }
 
