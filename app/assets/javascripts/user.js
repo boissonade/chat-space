@@ -6,11 +6,12 @@ $(function() {
       $(this).parent().remove();
     })
     $(document).on("click", ".user-search-remove", function () {
+      var search_list = $("#user-search-result");
+      var select_list = $("#chat-group-users");
       $(this).parent().remove();
     })
 
-var search_list = $("#user-search-result");
-var select_list = $("#chat-group-users");
+
 
 function appendUserName(user) {
     var html = `<div class="chat-group-user clearfix addmember">
