@@ -6,28 +6,18 @@
   .chat
     .header
       .left-header
-        .left-header__title
-          グループ名
+        .left-header__title{"data-group-id": "#{@group.id}"}
+          - current_user.groups.each do |group|
+            = @group.name
         %ul.left-header__members
           Member：
-          %li.member
-            メンバー名
-          %li.member
-            メンバー名
-          %li.member
-            メンバー名
+          - @group.users.each do |user|
+            = user.name
       .right-header
         .right-header__button
           Edit
     .messages
       = render @messages
-      .message
-        .upper-message
-          .upper-message__date
-            %p.message__upper-info__talker
-        .lower-meesage
-          .lower-message__content
-            %p.message__upper-info__date
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
