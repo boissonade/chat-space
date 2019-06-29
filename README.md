@@ -45,4 +45,3 @@
 - has_many :users, through::members
 - has_many :group_users
 - has_many :messages
-

@@ -1,8 +1,7 @@
 .side-bar
   .header
-    %p.header__name
-      -# = current_user.name
-      ユーザー名
+    %h1.header__name
+      = current_user.name
     %ul.user-menu
       %li.list
         = link_to new_group_path do
@@ -14,9 +13,9 @@
     - current_user.groups.each do |group|
       .group
         .group__name
-          グループ名
+          %p.group__name
         .group__message
-          新着メッセージ
+          %p.group__message
           = link_to group_messages_path(group) do
             .group__name
               = group.name
