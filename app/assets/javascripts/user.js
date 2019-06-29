@@ -18,7 +18,7 @@ function appendUserName(user) {
                 <p class="chat-group-user__name">${ user.name }</p>
                 <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${ user.id }"  data-user-name="${ user.name }">追加</a>
               </div>`
-    search_list.append(html);
+    $("#user-search-result").append(html);
   }
 
 function selectUserName(user_id, user_name) {
@@ -27,12 +27,15 @@ function selectUserName(user_id, user_name) {
                         <p class='chat-group-user__name'>${ user_name }</p>
                         <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
                     </div>`
-    select_list.append(remove_html);
+    $("#chat-group-users").append(remove_html);
   }
 
   $("#user-search-field").on("keyup", function() {
     var input = $("#user-search-field").val();
-
+    if (!input) {
+      $("#user-search-result").empty();
+      return;
+    }
     $.ajax({
       type: 'GET',
       url: '/users',
