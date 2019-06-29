@@ -7,8 +7,7 @@
     .header
       .left-header
         .left-header__title{"data-group-id": "#{@group.id}"}
-          - current_user.groups.each do |group|
-            = @group.name
+          = @group.name
         %ul.left-header__members
           Member：
           - @group.users.each do |user|
