@@ -6,11 +6,18 @@
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
+    display: flex;
+    box-sizing: border-box;
 
-    &__inner--left, .account-page__inner--right {
+    &__inner--left, .account-page__inner--left {
       float: left;
       width: 50%;
     }
+
+    &__inner--left, .account-page__inner--right {
+      width: 50%;
+    }
+
     &:after {
       clear: both;
       content: "";
